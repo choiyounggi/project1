@@ -42,7 +42,7 @@ public class Event extends JFrame {
 		btn1.setBackground(new Color(255, 215, 0));
 		btn1.setBorderPainted(false);
 		btn1.setIcon(new ImageIcon(Event.class.getResource("/image/t_d.PNG")));
-		btn1.setBounds(148, 305, 195, 195);
+		btn1.setBounds(54, 305, 195, 195);
 		panel.add(btn1);
 		btn1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -65,7 +65,7 @@ public class Event extends JFrame {
 		btn2.setBorderPainted(false);
 		btn2.setIcon(new ImageIcon(Event.class.getResource("/image/t_u.PNG")));
 		btn2.setBackground(new Color(255, 215, 0));
-		btn2.setBounds(549, 305, 195, 195);
+		btn2.setBounds(350, 305, 195, 195);
 		panel.add(btn2);
 		btn2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -84,20 +84,49 @@ public class Event extends JFrame {
 			}
 		});
 		
+		JButton btn3 = new JButton("");
+		btn3.setIcon(new ImageIcon(Event.class.getResource("/image/sign_up.PNG")));
+		btn3.setBorderPainted(false);
+		btn3.setBackground(new Color(255, 215, 0));
+		btn3.setBounds(636, 305, 195, 195);
+		panel.add(btn3);
+		
+		btn3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/image/click.PNG")));
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btn3.setIcon(new ImageIcon(Retrieve.class.getResource("/image/sign_up.PNG")));
+			}
+		});
+		btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new project.main.Sign_up();
+			}
+		});
+		
 		JLabel lblNewLabel_1 = new JLabel("\uC6D4\uAE09 \uC0AD\uAC10 (\uC9C0\uAC01\uC790 \uC218)");
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD | Font.ITALIC, 20));
-		lblNewLabel_1.setBounds(150, 267, 259, 28);
+		lblNewLabel_1.setBounds(56, 267, 259, 28);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("\uC6D4\uAE09 \uC778\uC0C1 (\uC815\uC0C1 \uCD9C\uC11D\uC790 \uC218)");
 		lblNewLabel_1_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD | Font.ITALIC, 20));
-		lblNewLabel_1_1.setBounds(526, 267, 295, 28);
+		lblNewLabel_1_1.setBounds(327, 267, 295, 28);
 		panel.add(lblNewLabel_1_1);
 		
 		JButton back_btn = new JButton("");
 		back_btn.setIcon(new ImageIcon(Event.class.getResource("/image/back1.PNG")));
 		back_btn.setBounds(0, 0, 32, 28);
 		panel.add(back_btn);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("\uC9C1\uC6D0, \uBD80\uC11C \uB4F1\uB85D");
+		lblNewLabel_1_1_1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD | Font.ITALIC, 20));
+		lblNewLabel_1_1_1.setBounds(660, 267, 159, 28);
+		panel.add(lblNewLabel_1_1_1);
 		back_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

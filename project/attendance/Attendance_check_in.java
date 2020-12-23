@@ -16,7 +16,7 @@ public class Attendance_check_in {
 			 Connection conn = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521/XEPDB1",
 					"hr",
-					"1234"
+					"123"
 			);
 			
 			String sql = "INSERT INTO attendance (check_date, check_in_time, emp_id, emp_name, attendance_check) VALUES (?, ?, ?, ?, ?)";

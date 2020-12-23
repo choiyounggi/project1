@@ -16,7 +16,7 @@ public class Update_result {
 			 Connection conn = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521/XEPDB1",
 					"hr",
-					"1234"
+					"123"
 			);
 			
 			String sql = "UPDATE attendance SET attendance_check = ?, check_out_time = ? WHERE emp_id = ? AND check_date = ?";

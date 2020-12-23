@@ -14,7 +14,7 @@ public class Update_result {
 			 Connection conn = DriverManager.getConnection(
 					"jdbc:oracle:thin:@localhost:1521/XEPDB1",
 					"hr",
-					"1234"
+					"123"
 			);
 			
 			String sql = "UPDATE employees3 SET salary = salary + 50000 WHERE department_id = ( SELECT department_id FROM departments3 WHERE department_name = ? )";
