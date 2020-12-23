@@ -1,4 +1,5 @@
 -- employees3 테이블 (직원 관리)
+CREATE SEQUENCE EMP_SEQ START WITH 1 MINVALUE 1 INCREMENT BY 1;
 CREATE TABLE employees3 (
     emp_id          NUMBER(4)
         CONSTRAINT employee_id_pk PRIMARY KEY,
@@ -9,8 +10,7 @@ CREATE TABLE employees3 (
         CONSTRAINT employee_tel_uk UNIQUE
         CONSTRAINT employee_tel_reg CHECK ( REGEXP_LIKE ( emp_phone,
                                                           '010-\d{4}-\d{4}' ) ),
-    manager_id      NUMBER(4)
-        CONSTRAINT manager_id_nn NOT NULL,
+    manager_id      NUMBER(4),
     emp_age         NUMBER(3)
         CONSTRAINT employee_age_nn NOT NULL,
     hire_date       DATE
@@ -29,9 +29,18 @@ CREATE TABLE employees3 (
             '계약직'
         ) )
 );
+
+-- 조회
 SELECT * FROM employees3;
 
+-- 직원 테이블 삭제
+DROP TABLE employees3 PURGE;
+
+-- 내용만 삭제
+DELETE FROM employees3;
+
 -- departments3 테이블 (부서 관리)
+CREATE SEQUENCE DPT_SEQ START WITH 1 MINVALUE 1 INCREMENT BY 1;
 CREATE TABLE departments3 (
     department_id     NUMBER(4)
         CONSTRAINT department_id_pk PRIMARY KEY,
@@ -40,6 +49,15 @@ CREATE TABLE departments3 (
     manager_id        NUMBER(4)
         CONSTRAINT manager_id_nn NOT NULL
 );
+
+-- 조회
+SELECT * FROM departments3;
+
+-- 부서 테이블 삭제
+DROP TABLE departments3 PURGE;
+
+-- 내용만 삭제
+DELETE FROM departments3;
 
 -- attendance 테이블 (출석 관리)
 CREATE TABLE attendance (
@@ -57,3 +75,12 @@ CREATE TABLE attendance (
     attendance_check   VARCHAR2(8)
         CONSTRAINT attendance_check_nn NOT NULL
 );
+
+-- 조회
+SELECT * FROM attendance;
+
+-- 출석 테이블 삭제
+DROP TABLE attendance PURGE;
+
+-- 내용만 삭제
+DELETE FROM attendance;
