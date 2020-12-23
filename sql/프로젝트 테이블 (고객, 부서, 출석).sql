@@ -9,7 +9,8 @@ CREATE TABLE employees3 (
         CONSTRAINT employee_tel_uk UNIQUE
         CONSTRAINT employee_tel_reg CHECK ( REGEXP_LIKE ( emp_phone,
                                                           '010-\d{4}-\d{4}' ) ),
-    manager_id      NUMBER(4),
+    manager_id      NUMBER(4)
+        CONSTRAINT manager_id_nn NOT NULL,
     emp_age         NUMBER(3)
         CONSTRAINT employee_age_nn NOT NULL,
     hire_date       DATE
@@ -20,8 +21,7 @@ CREATE TABLE employees3 (
     job_position    VARCHAR2(10)
         CONSTRAINT job_position_nn NOT NULL,
     department_id   NUMBER(4) 
-        CONSTRAINT department_id_fk REFERENCES departments3 ( department_id )
-        CONSTRAINT department_id_nn NOT NULL,
+        CONSTRAINT department_id_fk REFERENCES departments3 ( department_id ),
     division        VARCHAR2(9)
         CONSTRAINT employee_division_nn NOT NULL
         CONSTRAINT employee_division CHECK ( division IN (
