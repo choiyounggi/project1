@@ -18,8 +18,7 @@ public class Update_result {
 					"jdbc:oracle:thin:@localhost:1521/XEPDB1",
 					"hr",
 					"123"
-			);
-			
+			);			
 			
 			 
 			if (new Sign_up_success(department_name).result() == 0) {
@@ -42,7 +41,7 @@ public class Update_result {
 				result = String.format("[%s]부서 등록이 완료되었습니다.\n\n", department_name);
 			} else if (new Sign_up_success(department_name).result() > 0) {
 				
-				result = "이미 존재하는 사원입니다.\n\n";
+				result = "이미 존재하는 부서입니다.\n\n";
 			}
 			
 			

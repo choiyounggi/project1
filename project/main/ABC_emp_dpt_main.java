@@ -21,28 +21,8 @@ import javax.swing.JMenuBar;
 public class ABC_emp_dpt_main extends JFrame {
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ABC_emp_dpt_main frame = new ABC_emp_dpt_main();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public ABC_emp_dpt_main() {	
 		setTitle("직원, 부서 기능 모음");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 300, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
@@ -154,7 +134,31 @@ public class ABC_emp_dpt_main extends JFrame {
 		lblNewLabel_1_2.setBounds(693, 261, 70, 30);
 		panel.add(lblNewLabel_1_2);
 		
+		JButton back_btn = new JButton("");
+		back_btn.setIcon(new ImageIcon(ABC_emp_dpt_main.class.getResource("/image/back1.PNG")));
+		back_btn.setBounds(0, 0, 32, 28);
+		panel.add(back_btn);
+		
+		back_btn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				back_btn.setIcon(new ImageIcon(ABC_emp_dpt_main.class.getResource("/image/back2.PNG")));
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				back_btn.setIcon(new ImageIcon(ABC_emp_dpt_main.class.getResource("/image/back1.PNG")));
+			}
+		});
+		
+		back_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		
 		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 }
 

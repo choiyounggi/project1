@@ -84,6 +84,12 @@ public class Main_frame extends JFrame {
 			}
 		});
 		
+		brand_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new project.stock.stock();
+			}
+		});
+		
 		JButton payment_btn = new JButton("");
 		payment_btn.setBackground(Color.WHITE);
 		payment_btn.setIcon(new ImageIcon(Main_frame.class.getResource("/image/payment.png")));
@@ -101,6 +107,13 @@ public class Main_frame extends JFrame {
 				payment_btn.setIcon(new ImageIcon(Main_frame.class.getResource("/image/payment.PNG")));
 			}
 		});
+		
+		payment_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new project.Payment.test.swingtest();
+			}
+		});
+		
 		
 		JButton client_btn = new JButton("");
 		client_btn.setBackground(Color.WHITE);
@@ -120,6 +133,12 @@ public class Main_frame extends JFrame {
 			}
 		});
 		
+		client_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new project01.Frame01();
+			}
+		});
+		
 		JButton emp_btn = new JButton("");
 		emp_btn.setBackground(Color.WHITE);
 		emp_btn.setIcon(new ImageIcon(Main_frame.class.getResource("/image/emp.png")));
@@ -135,6 +154,12 @@ public class Main_frame extends JFrame {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				emp_btn.setIcon(new ImageIcon(Main_frame.class.getResource("/image/emp.PNG")));
+			}
+		});
+		
+		emp_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ABC_emp_dpt_main();
 			}
 		});
 		
